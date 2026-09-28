@@ -838,3 +838,322 @@ body.scene-changing #scene2 {
 
     opacity: .8;
 }
+
+/* =========================================================
+   MOBILE OPTIMIZATION — SCENES 1 TO 5
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+/* =========================================================
+   TOUCH OPTIMIZATION
+========================================================= */
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+/* =========================================================
+   MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------
+       GENERAL
+    ----------------------------------------- */
+
+    #canvas-container,
+    canvas {
+        width: 100vw;
+        height: 100dvh;
+    }
+
+
+    /* -----------------------------------------
+       SCENE 1
+    ----------------------------------------- */
+
+    #scene1 {
+        width: 100%;
+        height: 100dvh;
+
+        padding:
+            max(25px, env(safe-area-inset-top))
+            16px
+            max(18px, env(safe-area-inset-bottom));
+
+        justify-content: space-between;
+    }
+
+    .top-label {
+        font-size: 8px;
+        letter-spacing: 2.5px;
+        max-width: 90vw;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0;
+        padding: 0 8px;
+    }
+
+    .tiny-heart {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(48px, 15vw, 70px);
+        letter-spacing: -2px;
+        line-height: .95;
+    }
+
+    .hero-content h2 {
+        margin-top: 14px;
+        font-size: clamp(21px, 6vw, 28px);
+        line-height: 1.25;
+    }
+
+    .hero-content p {
+        max-width: 330px;
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+
+    /* -----------------------------------------
+       START BUTTON
+    ----------------------------------------- */
+
+    #startButton {
+        min-width: 0;
+        width: min(90vw, 280px);
+
+        margin-top: 22px;
+
+        padding:
+            15px
+            20px;
+
+        min-height: 52px;
+
+        font-size: 13px;
+
+        gap: 12px;
+    }
+
+    #startButton strong {
+        font-size: 17px;
+    }
+
+    .hint {
+        margin-top: 12px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .bottom-message {
+        max-width: 90vw;
+        font-size: 8px;
+        letter-spacing: 1.2px;
+    }
+
+
+    /* -----------------------------------------
+       SCENE 2
+    ----------------------------------------- */
+
+    #scene2 {
+        width: 100vw;
+        height: 100dvh;
+
+        padding:
+            20px
+            16px;
+    }
+
+    .scene2-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 10px;
+    }
+
+    .scene2-label {
+        font-size: 8px;
+        letter-spacing: 3px;
+        margin-bottom: 18px;
+    }
+
+    .scene2-content h2 {
+        font-size: clamp(34px, 11vw, 55px);
+        line-height: 1.08;
+    }
+
+    .scene2-content p {
+        margin-top: 18px;
+        font-size: 13px;
+        line-height: 1.6;
+        letter-spacing: 1px;
+    }
+
+
+    /* -----------------------------------------
+       SCENE 3
+    ----------------------------------------- */
+
+    #scene3 {
+        width: 100vw;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .scene3-content {
+        top: 10%;
+
+        width: calc(100% - 30px);
+        max-width: 100%;
+
+        padding: 0 5px;
+    }
+
+    .scene3-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+        margin-bottom: 13px;
+    }
+
+    .scene3-content h2 {
+        font-size: clamp(27px, 8vw, 42px);
+        line-height: 1.15;
+    }
+
+    .scene3-content p {
+        margin-top: 14px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------
+       ALL DYNAMIC BUTTONS
+    ----------------------------------------- */
+
+    button {
+        max-width: calc(100vw - 32px);
+        min-height: 48px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+        max-width: 300px;
+    }
+
+    #startButton {
+        width: 250px;
+        padding: 14px 18px;
+    }
+
+    .scene3-content {
+        top: 8%;
+    }
+
+    .scene3-content h2 {
+        font-size: 27px;
+    }
+
+    .scene3-content p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   SHORT MOBILE SCREENS
+========================================================= */
+
+@media (max-width: 600px) and (max-height: 700px) {
+
+    #scene1 {
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+
+    .tiny-heart {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 10px;
+    }
+
+    .hero-content h2 {
+        margin-top: 8px;
+    }
+
+    .hero-content p {
+        margin-top: 10px;
+        line-height: 1.5;
+    }
+
+    #startButton {
+        margin-top: 15px;
+        min-height: 46px;
+    }
+
+    .hint {
+        margin-top: 8px;
+    }
+}
+
+
+/* =========================================================
+   SAFE AREA — NOTCH / HOME BAR
+========================================================= */
+
+@supports (padding: env(safe-area-inset-top)) {
+
+    #scene1,
+    #scene2,
+    #scene3 {
+        padding-left:
+            max(16px, env(safe-area-inset-left));
+
+        padding-right:
+            max(16px, env(safe-area-inset-right));
+    }
+}
